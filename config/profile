@@ -1,0 +1,14 @@
+#!/bin/sh	
+
+export $(envsubst < ${XDG_CONFIG_HOME}/env)
+
+#if [[ -n "$SSH_CONNECTION" ]]; then
+#	PINENTRY_USER_DATA="USE_CURSES"
+#fi
+
+if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+	export PINENTRY_USER_DATA="USE_GNOME3"
+	exec sway
+fi
+
+

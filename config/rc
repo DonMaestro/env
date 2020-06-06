@@ -1,0 +1,11 @@
+
+# fix pinentry
+export GPG_TTY=$(tty)
+
+# -------
+# Aliases
+# -------
+alias rr=ranger
+alias sj="sudo journalctl"
+alias t="todo.sh"
+
